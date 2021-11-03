@@ -1,0 +1,169 @@
+body {
+  background-color: #fcf9f9;
+}
+
+.titulo {
+  padding: 50px 0px;
+  margin-left: -880px;
+}
+
+.icono-titulo {
+  font-family: FontAwesome;
+  font-size: 30px;
+}
+
+.titulo-inicio {
+  font-family: Roboto;
+  font-size: 30px;
+}
+
+.titulo2 {
+  padding: 0px 300px;
+}
+
+.tituloblog {
+  width: 592px;
+  font-family: Roboto;
+  font-size: 30px;
+  border: none;
+  border-bottom: 1px solid #a2a0a0;
+  text-align: center;
+  background-color: #fcf9f9;
+  outline: none;
+}
+
+.tituloblog::placeholder {
+  color: #a2a0a0;
+  font-family: Roboto;
+}
+
+@supports (object-fit: cover) {
+  .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.cuadro-imagen {
+  background-color: #e0defb;
+  width: 406px;
+  height: 465px;
+  border: 0.5px solid rgb(196, 192, 192);
+  display: flex;
+  text-align: right;
+  float: left;
+  box-shadow: -2px 3px 5px #7e7b7b;
+  margin-left: 150px;
+}
+
+.imagen {
+  margin-top: 20px;
+  margin-left: 18px;
+  background-color: #ffffff;
+  width: 366px;
+  height: 380px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+}
+
+.input-file {
+  margin-top: 425px;
+  margin-left: 258px;
+  font-family: Fifth-Grader;
+  font-size: 40px;
+  position: absolute;
+}
+
+.input-file__input {
+  display: none;
+}
+
+.autor {
+  width: 400px;
+  height: 40px;
+  background-color: #fcf9f9;
+  border: none;
+  border-bottom: 2px solid #a2a0a0;
+  outline: none;
+  margin-left: -400px;
+}
+
+.autor::placeholder {
+  font-family: Roboto;
+  color: #a2a0a0;
+  font-size: 25px;
+}
+
+.input {
+  width: 400px;
+  height: 50px;
+  background-color: #fcf9f9;
+  border: 1px solid #a2a0a0;
+  font-family: Roboto;
+  color: #a2a0a0;
+  text-transform: uppercase;
+  margin-left: -400px;
+}
+
+.contenedortexto {
+  margin-left: 150px;
+  margin-right: 320px;
+  height: 500px;
+}
+
+.boton-descripcion {
+  width: 600px;
+  height: 40px;
+  font-family: Montserrat;
+  font-size: 15px;
+  margin-left: 150px;
+  border: 1px solid #a2a0a0;
+}
+
+.etiquetas {
+  width: 1030px;
+  height: 40px;
+  font-family: Montserrat;
+  font-size: 15px;
+  margin-left: -167px;
+  border: 1px solid #a2a0a0;
+}
+
+.etiquetas::placeholder {
+  color: #a2a0a0;
+  font-family: Montserrat;
+}
+
+.publicar {
+  width: 250px;
+  height: 40px;
+  background-color: #e0defb;
+  font-size: 28px;
+  color: #000000;
+  font-family: Roboto;
+  border: none;
+  box-shadow: -1px 2px 3px #aaa4a4;
+  margin-left: 41%;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(Fonts/Otras/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: FontAwesome;
+  src: url(Fonts/fontawesome-5/otfs/Font-Awesome-5.otf);
+}
+
+@font-face {
+  font-family: Fifth-Grader;
+  src: url(Fonts/Fifth-Grader/Fifth-Grader.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(Fonts/Montserrat/Montserrat-Regular.ttf);
+}

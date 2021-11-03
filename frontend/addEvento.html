@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="addEvento.css" />
+    <link rel="stylesheet" href="MenuFijo.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+
+    <title>Agregar Evento</title>
+    <link rel="icon" href="Images/icono.ico" />
+</head>
+
+<body>
+    <div class="navbar navbar-expand-lg" id="menul">
+        <div class="menu">
+            <nav class="nav-above">
+                <ul class="nav-title">
+                    <li>
+                        <a id="laVida" href="inicio.html">LA VIDA DE ESTUDIANTE</a>
+                    </li>
+                </ul>
+                <ul class="nav-title-right">
+                    <li>
+                        <a id="elUser" href="Login.html">
+                            <i class="fas fa-user-graduate"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="VerProducto.html">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li>
+                        <a class="hoo1" href="Blogs.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a class="hoo2" href="Productos.html">Productos</a>
+                    </li>
+                    <li>
+                        <a class="hoo3" href="VerEvento.html">Eventos</a>
+                    </li>
+                    <li>
+                        <a class="hoo4" href="#">Panas</a>
+                    </li>
+                </ul>
+                <ul class="nav-menu-right">
+                    <li>
+                        <a href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA">
+                            <img src="images/spotify.png" alt="spotify" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+                            <img src="images/instagram.png" alt="instagram" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/lavidadestudiante">
+                            <img src="images/facebook.png" alt="facebook" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.link/d92ume">
+                            <img src="images/whatsapp.png" alt="whatsapp" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=NXmAW4kMZLI" id="nav2-right-l">
+                            <img src="images/youtube.png" alt="youtube" width="30" height="30" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <hr />
+    <br><br><br><br><br><br><br>
+    <div class="titulo">
+        <text>Agregar Evento</text>
+    </div>
+    <hr />
+
+    <br /><br />
+    <div class="margen-izquierda"></div>
+    <div class="cuadro-imagen">
+        <div class="imagen">
+            <div class="box img"><img id="image"></div>
+        </div>
+        <div class="input-file">
+            <input id="myinput" type="file" class="input-file__input" onchange="encode();" multiple />
+            <label for="myinput"> Agregar</label>
+        </div>
+    </div>
+    </div>
+    <div class="separacion"></div>
+        <div class="cuadro-form">
+            <div class="cuadroregistro">
+                <div>
+                    <br /><label for="Titulo">Título</label><br />
+                    <input type="text" class="inputs" id="Titulo" name="Titulo" /><br /><br />
+
+                    <label for="Descripcion">Descripción</label><br />
+                    <input type="text" class="inputs" id="Descripcion" name="Descripcion" /><br />
+
+                    <br /><label for="Lugar">Lugar</label><br />
+                    <input type="text" class="inputs" id="Lugar" name="Lugar" /><br /><br />
+
+                    <label for="Fecha">Fecha</label><br />
+                    <input type="date" class="inputs" id="Fecha" name="Fecha" placeholder="Hola" /><br /> <br />
+
+                    <label for="Promotor">Promotor</label><br />
+                    <input type="text" class="inputs" id="Promotor" name="Promotor" /><br /><br />
+
+                    <label for="Contacto">Contacto</label><br />
+                    <input type="text" class="inputs" id="Contacto" name="Contacto" /><br /><br />
+
+                    <label for="Costo">Costo</label><br />
+                    <input type="text" class="inputs" id="Costo" name="Costo" /><br><br />
+
+                    <button class="guardar" onclick="myFunctionE()">Guardar Evento</button>
+                </br>
+            </br>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+</body>
+    <script>
+        var image = [];
+
+        function encode() {
+            var selectedfile = document.getElementById("myinput").files;
+            if (selectedfile.length > 0) {
+                for (i = 0; i < selectedfile.length; i++) {
+                    var imageFile = selectedfile[i];
+                    var fileReader = new FileReader();
+                    fileReader.onload = function(fileLoadedEvent) {
+                        var srcData = fileLoadedEvent.target.result;
+                        image.push(srcData);
+                        var newImage = document.createElement("img");
+                        newImage.src = srcData;
+                        //Enviar img al HTML
+                        var archivo = document.getElementById("myinput").files[0];
+                        var reader = new FileReader();
+                        reader.readAsDataURL(archivo);
+                        reader.onloadend = function() {
+                            document.getElementById("image").src = reader.result;
+                        }
+                    };
+                    fileReader.readAsDataURL(imageFile);
+                }
+            }
+        }
+
+        function myFunctionE() {
+
+            var fecha = document.getElementById("Fecha").value;
+            var titulo = document.getElementById("Titulo").value;
+            var descripcion = document.getElementById("Descripcion").value;
+            var lugar = document.getElementById("Lugar").value;
+            var promotor = document.getElementById("Promotor").value;
+            var contacto = document.getElementById("Contacto").value;
+            var costo = document.getElementById("Costo").value;
+
+            var clear = () => {
+                document.getElementById("Fecha").value = "";
+                document.getElementById("Titulo").value = "";
+                document.getElementById("Descripcion").value = "";
+                document.getElementById("Lugar").value = "";
+                document.getElementById("Promotor").value = "";
+                document.getElementById("Contacto").value = "";
+                document.getElementById("Costo").value = "";
+                //document.getElementById("image").value="";
+            }
+            clear();
+
+
+            var data = obtenerData();
+            fetch("http://localhost:8080/addEvent", {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then(response => response.json())
+                .then(datas => {
+                    var x = datas;
+                    console.log(datas)
+                    x ? null : alert("El evento no se agrego, Verifique los datos")
+                    location.href = "VerEvento.html";
+                })
+                .catch(error => console.log("error en el fetch"))
+                .then(console.log('Si entro al fetch!'));
+
+            function obtenerData() {
+                var evento = {
+                    fecha: fecha,
+                    titulo: titulo,
+                    descripcion: descripcion,
+                    lugar: lugar,
+                    promotor: promotor,
+                    contacto: contacto,
+                    costo: costo,
+                    imagen: image.toString()
+                };
+                return evento;
+            }
+        }
+    </script>
+    
+
+</html>

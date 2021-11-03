@@ -1,0 +1,143 @@
+body {
+    background-color: #fcf9f9;
+}
+
+.titulo {
+    text-align: center;
+    font-family: CabinSketch;
+    margin-top: -10px;
+    font-size: 55px;
+    color: #707070;
+}
+
+.margen-derecha {
+    float: left;
+    padding: 1%;
+    padding-left: 2%;
+}
+
+.cuadro-form {
+    float: left;
+    text-align: right;
+}
+
+textarea {
+    resize: none;
+}
+
+.menuFijo {
+    margin-top: 0px;
+}
+
+.cuadroregistro {
+    font-family: Lato;
+    display: flex;
+    text-align: left;
+    float: left;
+    height: 100%;
+    background-color: #fcf9f9;
+}
+
+.cuadro-imagen {
+    background-color: #e0defb;
+    width: 400px;
+    height: 470px;
+    border: 0.5px solid rgb(196, 192, 192);
+    display: flex;
+    text-align: right;
+    float: left;
+    box-shadow: -2px 3px 5px #7e7b7b;
+}
+
+.margen-izquierda {
+    margin-right: 7vw;
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+
+.imagen {
+    margin-top: 20px;
+    margin-left: 18px;
+    background-color: #FFFFFF;
+    width: 366px;
+    height: 380px;
+    border: 0.5px solid rgb(196, 192, 192);
+    overflow: hidden;
+}
+
+.input-file {
+    margin-top: 425px;
+    margin-left: 258px;
+    font-family: Fifth-Grader;
+    position: absolute;
+    font-size: 40px;
+}
+
+.input-file__input {
+    display: none;
+}
+
+.separacion {
+    width: 50px;
+    height: 100px;
+    float: left
+}
+
+    width: 390px;
+    height: 492px;
+.inputs {
+    width: 380px;
+    height: 25px;
+    border: 1px solid #a2a0a0;
+}
+
+.textarea {
+    width: 382px;
+    height: 150px;
+}
+
+.guardar {
+    width: 400px;
+    height: 40px;
+    background-color: #ffffff;
+    font-size: 18px;
+    color: #000000;
+    font-family: Roboto;
+    border: 1px solid #a2a0a0;
+    box-shadow: -1px 2px 3px #aaa4a4;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover) {
+    .box img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(Fonts/Otras/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: Fifth-Grader;
+    src: url(Fonts/Fifth-Grader/Fifth-Grader.ttf);
+}
+
+@font-face {
+    font-family: CabinSketch;
+    src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(Fonts/Otras/Roboto/Roboto-Regular.ttf);
+}

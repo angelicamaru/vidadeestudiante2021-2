@@ -1,0 +1,199 @@
+body {
+    background-color: #faf9f9;
+}
+
+.tituloFiestas {
+    margin-left: 380px;
+    font-family: CabinSketch;
+    font-size: 50px;
+    color: #707070;
+}
+
+
+/* .centrar {
+    text-align: center;
+    align-items: center;
+    background-size: auto;
+
+} */
+
+.titulosEventos {
+    font-family: Roboto;
+    margin-top: -25px;
+    font-size: 35px;
+    color: black
+}
+
+.datosEventos {
+    margin-top: -25px;
+    font-size: 20px;
+    color: black;
+    font-family: Roboto;
+}
+
+.margen-izquierda {
+    float: left;
+}
+
+.imagendos {
+    margin-top: 5px;
+    margin-left: 170px;
+    background-color: #FFFFFF;
+    width: 350px;
+    height: 220px;
+    border: 0.6px solid rgb(100, 100, 100);
+}
+
+.margen-derecha {
+    float: left;
+    padding: 1%;
+    padding-left: 2%;
+}
+
+.cuadro-form {
+    float: left;
+    width: 50px;
+    height: 50px;
+    text-align: right;
+}
+
+.color {
+    background-color: #f7f3f3;
+}
+
+.cuadro-formm {
+    float: left;
+    width: 50px;
+    height: 50px;
+    text-align: right;
+    margin-left: 195px;
+}
+
+.cuadro-fiestas {
+    font-family: Lato;
+    text-align: left;
+    float: left;
+    width: 450px;
+}
+
+.cuadro-fiestass {
+    font-family: Lato;
+    text-align: left;
+    float: left;
+    width: 450px;
+}
+
+.iconos {
+    margin-left: 400px;
+    font-size: 35px;
+    font-family: fontawesome-5;
+    color: #707070;
+    outline: none;
+}
+
+.tituloVarios {
+    text-align: center;
+    font-family: Sketch-Fine-Serif;
+    margin-top: -10px;
+    font-size: 50px;
+    color: #707070;
+}
+
+.menuFijo {
+    margin-top: 0px;
+}
+
+.separaciondos {
+    width: 250px;
+    height: 110px;
+    float: left
+}
+
+.cuadro-varios {
+    font-family: Lato;
+    text-align: left;
+    float: left;
+    width: 400px;
+}
+
+.input-file__input {
+    display: none;
+}
+
+.textarea {
+    width: 382px;
+    height: 150px;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover) {
+    .box img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+.box imgdos {
+    width: 100%;
+    height: auto;
+}
+
+@supports(object-fit: cover) {
+    .box imgdos {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+.pieDePag {
+    width: 30px;
+    clear: both;
+}
+
+@font-face {
+    font-family: Sketch-Fine-Serif;
+    src: url(Fonts/Sketch-Fine-Serif/Sketch-Fine-Serif.otf);
+}
+
+@font-face {
+    font-family: Messages;
+    src: url(Fonts/Messages/Messages.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(Fonts/Otras/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: Fifth-Grader;
+    src: url(Fonts/Fifth-Grader/Fifth-Grader.ttf);
+}
+
+@font-face {
+    font-family: American-Typewriter;
+    src: url(Fonts/American-Typewriter-Regular/American-Typewriter-Regular.ttf);
+}
+
+@font-face {
+    font-family: MV-Boly;
+    src: url(Fonts/Mv-Boli/mv-boli.ttf);
+}
+
+@font-face {
+    font-family: fontawesome-5;
+    src: url(Fonts/fontawesome-5/otfs/Font-Awesome-5-Solid.otf);
+}
+
+@font-face {
+    font-family: CabinSketch;
+    src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}

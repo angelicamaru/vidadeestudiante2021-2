@@ -1,0 +1,66 @@
+body {
+  background-color: #fcf9f9;
+}
+
+.titulo-blog {
+  font-family: CabinSketch;
+  font-size: 50px;
+  margin-left: 10px;
+}
+
+.imagen {
+  margin-left: 200px;
+  background-color: #ffffff;
+  width: 366px;
+  height: 380px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+}
+
+.autor {
+  margin-left: -935px;
+  font-family: Roboto;
+  font-size: 25px;
+  color: #616161;
+}
+
+.fecha {
+  margin-left: -1015px;
+  font-family: Roboto;
+  font-size: 15px;
+  color: #616161;
+}
+
+.texto-blog {
+  margin-left: 200px;
+  width: 900px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.etiqueta1 {
+  margin-right: 910px;
+  font-family: Montserrat;
+  color: #616161;
+}
+
+.etiqueta2 {
+  margin-right: 1010px;
+  font-family: Montserrat;
+  color: #616161;
+}
+
+@font-face {
+  font-family: CabinSketch;
+  src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(Fonts/Otras/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(Fonts/Montserrat/Montserrat-Regular.ttf);
+}

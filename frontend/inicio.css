@@ -1,0 +1,163 @@
+body {
+  background-color: #fcf9f9;
+}
+
+.wrapper {
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1090px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.container {
+  width: 1090px;
+}
+
+ul.slider {
+  position: relative;
+  width: 1090px;
+  height: 300px;
+}
+
+ul.slider li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  transition: opacity 0.5s;
+}
+
+ul.slider li img {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+ul.slider li:first-child {
+  opacity: 1;
+}
+
+ul.slider li:target {
+  opacity: 1;
+}
+
+.menu1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.menu1 li {
+  display: inline-block;
+  color: black;
+}
+
+.menu1 li a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+.titulo1 {
+  margin-left: -850px;
+}
+
+.icono-titulo {
+  font-family: FontAwesome;
+  font-size: 30px;
+  color: #616161;
+}
+
+.titulo-inicio {
+  font-family: CabinSketch;
+  font-size: 30px;
+}
+
+table {
+  margin-left: 320px;
+}
+
+.titulo-blog {
+  padding: 0px 20px;
+  font-family: CabinSketch;
+  font-size: 30px;
+}
+
+.imagen {
+  background-color: #ffffff;
+  width: 366px;
+  height: 380px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.titulo-blog1 {
+  padding: 0px 20px;
+  font-family: CabinSketch;
+  font-size: 20px;
+}
+
+.imagen1 {
+  background-color: #ffffff;
+  width: 180px;
+  height: 130px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.titulo-blog2 {
+  padding: 0px 20px;
+  font-family: CabinSketch;
+  font-size: 20px;
+}
+
+.imagen2 {
+  background-color: #ffffff;
+  width: 180px;
+  height: 130px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.titulo-blog3 {
+  padding: 0px 20px;
+  font-family: CabinSketch;
+  font-size: 20px;
+}
+
+.imagen3 {
+  background-color: #ffffff;
+  width: 180px;
+  height: 130px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.spotify {
+  margin-left: 150px;
+}
+
+.serie {
+  margin-left: 150px;
+}
+
+@font-face {
+  font-family: FontAwesome;
+  src: url(Fonts/fontawesome-5/otfs/Font-Awesome-5-Brands-Regular-400.otf);
+}
+
+@font-face {
+  font-family: CabinSketch;
+  src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}

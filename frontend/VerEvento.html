@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="VerEvento.css" />
+    <link rel="stylesheet" href="MenuFijo.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet" />
+
+    <title>Ver Evento</title>
+    <link rel="icon" href="Images/icono.ico" />
+</head>
+
+<body style="
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    ">
+    <div class="navbar navbar-expand-lg" id="menul">
+        <div class="menu">
+            <nav class="nav-above">
+                <ul class="nav-title">
+                    <li>
+                        <a id="laVida" href="inicio.html">LA VIDA DE ESTUDIANTE</a>
+                    </li>
+                </ul>
+                <ul class="nav-title-right">
+                    <li>
+                        <a id="elUser" href="Login.html">
+                            <i class="fas fa-user-graduate"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="VerProducto.html">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li>
+                        <a class="hoo1" href="Blogs.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a class="hoo2" href="Productos.html">Productos</a>
+                    </li>
+                    <li>
+                        <a class="hoo3" href="VerEvento.html">Eventos</a>
+                    </li>
+                    <li>
+                        <a class="hoo4" href="#">Panas</a>
+                    </li>
+                </ul>
+                <ul class="nav-menu-right">
+                    <li>
+                        <a href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA">
+                            <img src="images/spotify.png" alt="spotify" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+                            <img src="images/instagram.png" alt="instagram" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/lavidadestudiante">
+                            <img src="images/facebook.png" alt="facebook" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.link/d92ume">
+                            <img src="images/whatsapp.png" alt="whatsapp" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=NXmAW4kMZLI" id="nav2-right-l">
+                            <img src="images/youtube.png" alt="youtube" width="30" height="30" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+    <div class="tituloFiestas">
+        <label>Párchese y Aprenda</label>
+        <a href="addEvento.html">
+            <i class="iconos">plus</i>
+        </a>
+    </div>
+    <hr />
+
+    <br />
+    <br />
+    <div id="Eventos"></div>
+    <script>
+        window.onload = function() {
+            var url = "http://localhost:8080/getEvents";
+
+            fetch(url, {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then((response) => response.json())
+                .then((datas) => {
+                    var eventos = datas;
+                    const fragment = document.createDocumentFragment();
+                    for (i = 0; i < eventos.length; i++) {
+                        var evento = {
+                            titulo: datas[i].titulo,
+                            imagen: datas[i].imagen,
+                            lugar: datas[i].lugar,
+                            fecha: datas[i].fecha,
+                            contacto: datas[i].contacto,
+                            promotor: datas[i].promotor,
+                        };
+
+                        var aca = () => {
+                            var espacio = document.createElement("br");
+                            var my = document.createElement("br");
+                            var fin = document.createElement("br");
+                            var negrilla = document.createElement("b")
+                            var field = document.createElement("fieldset");
+                            field.setAttribute(
+                                "style",
+                                "border-color:#faf9f9; border: 1px"
+                            );
+                            var margenRight = document.createElement("div");
+                            margenRight.setAttribute("class", "margen-derecha");
+                            var margenLeft = document.createElement("div");
+                            margenLeft.setAttribute("class", "margen-izquierda");
+                            var foto = document.createElement("img");
+                            foto.setAttribute("src", evento.imagen);
+                            foto.setAttribute("class", "imagendos");
+                            var cuadro = document.createElement("div");
+                            cuadro.setAttribute("class", "cuadro-form");
+                            var fiesta = document.createElement("div");
+                            fiesta.setAttribute("class", "cuadro-fiestas");
+                            var titulo = document.createElement("p");
+                            titulo.setAttribute("class", "titulosEventos");
+                            var lugar = document.createElement("label");
+                            lugar.setAttribute("class", "datosEventos");
+                            var fecha = document.createElement("label");
+                            fecha.setAttribute("class", "datosEventos");
+                            var promotor = document.createElement("label");
+                            promotor.setAttribute("class", "datosEventos");
+                            var contacto = document.createElement("label");
+                            contacto.setAttribute("class", "datosEventos");
+                            var copas = document.createElement("label");
+                            copas.setAttribute("class", "iconos");
+                            var linea = document.createElement("hr");
+                            var br = document.createElement("br");
+                            var final = document.getElementById("Eventos");
+
+                            foto.textContent = evento.imagen;
+                            margenLeft.appendChild(foto);
+                            field.appendChild(margenLeft);
+
+                            copas.textContent = "glass-cheers";
+                            fiesta.appendChild(copas);
+                            titulo.textContent = evento.titulo;
+                            negrilla.appendChild(titulo);
+                            fiesta.appendChild(negrilla)
+                            fiesta.appendChild(br);
+                            lugar.textContent = "Lugar:  " + evento.lugar;
+                            fiesta.appendChild(lugar);
+                            fiesta.appendChild(espacio);
+                            fecha.textContent = "Fecha:  " + evento.fecha;
+                            fiesta.appendChild(fecha);
+                            fiesta.appendChild(fin)
+                            promotor.textContent = "Promotor:  " + evento.promotor;
+                            fiesta.appendChild(promotor);
+                            fiesta.appendChild(my);
+                            contacto.textContent = "Contacto:  " + evento.contacto;
+                            fiesta.appendChild(contacto);
+                            fiesta.appendChild(linea);
+                            cuadro.appendChild(fiesta);
+                            margenRight.appendChild(cuadro);
+                            field.appendChild(margenRight);
+                            final.appendChild(field);
+                        };
+                        aca();
+                    }
+                })
+                .catch((error) => console.log("error!"))
+                .then(console.log("Si entro al fetch!"));
+        }
+
+        function showDatos(titulo, image, lugar, fecha, contacto, promotor) {
+            var x = document.createElement("IMG");
+            x.setAttribute("src", image);
+            x.setAttribute("width", "350");
+            x.setAttribute("height", "220");
+            document.getElementById("imagen").appendChild(x);
+            document.getElementById("titulo").innerHTML = titulo;
+            document.getElementById("Lugar").innerHTML = lugar;
+            document.getElementById("Fecha").innerHTML = fecha;
+            document.getElementById("Contacto").innerHTML = contacto;
+            document.getElementById("Promotor").innerHTML = promotor;
+        }
+
+        function showDatos2(titulo, image, lugar, fecha, contacto, promotor) {
+            var x = document.createElement("IMG");
+            x.setAttribute("src", image);
+            x.setAttribute("width", "350");
+            x.setAttribute("height", "220");
+            x.setAttribute("alt", "The Pulpit Rock");
+            document.getElementById("imagen2").appendChild(x);
+            document.getElementById("titulo2").innerHTML = titulo;
+            document.getElementById("Lugar2").innerHTML = lugar;
+            document.getElementById("Fecha2").innerHTML = fecha;
+            document.getElementById("Contacto2").innerHTML = contacto;
+            document.getElementById("Promotor2").innerHTML = promotor;
+        }
+
+        function showDatos3(titulo, image, lugar, fecha, contacto, promotor) {
+            var x = document.createElement("IMG");
+            x.setAttribute("src", image);
+            x.setAttribute("width", "350");
+            x.setAttribute("height", "220");
+            x.setAttribute("alt", "The Pulpit Rock");
+            document.getElementById("imagen3").appendChild(x);
+            document.getElementById("titulo3").innerHTML = titulo;
+            document.getElementById("Lugar3").innerHTML = lugar;
+            document.getElementById("Fecha3").innerHTML = fecha;
+            document.getElementById("Contacto3").innerHTML = contacto;
+            document.getElementById("Promotor3").innerHTML = promotor;
+        }
+
+        function showDatos4(titulo, image, lugar, fecha, contacto, promotor) {
+            var x = document.createElement("IMG");
+            x.setAttribute("src", image);
+            x.setAttribute("width", "350");
+            x.setAttribute("height", "220");
+            x.setAttribute("alt", "La imagen :)");
+            document.getElementById("imagen4").appendChild(x);
+            document.getElementById("titulo4").innerHTML = titulo;
+            document.getElementById("Lugar4").innerHTML = lugar;
+            document.getElementById("Fecha4").innerHTML = fecha;
+            document.getElementById("Contacto4").innerHTML = contacto;
+            document.getElementById("Promotor4").innerHTML = promotor;
+        }
+    </script>
+</body>
+
+</html>

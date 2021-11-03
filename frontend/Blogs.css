@@ -1,0 +1,65 @@
+body {
+  padding: 0;
+  margin: 0 0;
+}
+
+.containe {
+  width: 25%;
+  box-sizing: border-box;
+  margin: 50px;
+  margin: 1em, 1em 3em;
+  padding: 0;
+  /* display: inline-table; */
+  display: inline-flexbox;
+  /* justify-content: center; */
+  max-width: 10 0%;
+  float: left;
+  align-items: center;
+}
+
+.container-fluid {
+  margin: 1em;
+}
+
+.product {
+  display: flex;
+}
+.titu {
+  text-align: center;
+  font-family: CabinSketch;
+  margin-top: -10px;
+  font-size: 55px;
+  color: #707070;
+}
+
+.texto {
+  font-family: Roboto;
+  margin-left: 1em;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
+.img-fluid {
+  border: rgb(238, 210, 210) solid 2px;
+  width: 15em;
+  height: 10em;
+}
+
+#car a:hover {
+  color: rgb(189, 31, 57);
+  -webkit-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
+  -ms-transform: scale(1.5, 1.5);
+  -o-transform: scale(1.5, 1.5);
+  transform: scale(0.8, 0.8);
+  -webkit-transition: all 0.8s linear;
+  -moz-transition: all 0.8s linear;
+  -ms-transition: all 0.8s linear;
+  -o-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+}
+
+@font-face {
+  font-family: CabinSketch;
+  src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}

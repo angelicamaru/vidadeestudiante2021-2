@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+
+	<title>Log in</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="Login.css">
+	<link rel="stylesheet" href="MenuFijo.css" />
+	<link rel="icon" href="Images/icono.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+	<div class="navbar navbar-expand-lg" id="menul">
+		<div class="menu">
+		  <nav class="nav-above">
+			<ul class="nav-title">
+			  <li>
+				<a id="laVida" href="inicio.html">LA VIDA DE ESTUDIANTE</a>
+			  </li>
+			</ul>
+			<ul class="nav-title-right">
+			  <li>
+				<a id="elUser" href="Login.html">
+				  <i class="fas fa-user-graduate"></i>
+				</a>
+			  </li>
+			  <li>
+				<a href="VerProducto.html">
+				  <i class="fas fa-shopping-cart"></i>
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		  <nav class="nav-main">
+			<ul class="nav-menu">
+			  <li>
+				<a class="hoo1" href="Blogs.html">Blogs</a>
+			  </li>
+			  <li>
+				<a class="hoo2" href="Productos.html">Productos</a>
+			  </li>
+			  <li>
+				<a class="hoo3" href="VerEvento">Eventos</a>
+			  </li>
+			  <li>
+				<a class="hoo4" href="#">Panas</a>
+			  </li>
+			</ul>
+			<ul class="nav-menu-right">
+			  <li>
+				<a
+				  href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA"
+				>
+				  <img
+					src="images/spotify.png"
+					alt="spotify"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+				  <img
+					src="images/instagram.png"
+					alt="instagram"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a href="https://www.facebook.com/lavidadestudiante">
+				  <img
+					src="images/facebook.png"
+					alt="facebook"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a href="https://wa.link/d92ume">
+				  <img
+					src="images/whatsapp.png"
+					alt="whatsapp"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a
+				  href="https://www.youtube.com/watch?v=NXmAW4kMZLI"
+				  id="nav2-right-l"
+				>
+				  <img
+					src="images/youtube.png"
+					alt="youtube"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		</div>
+	<hr />
+
+	<div class="login">
+		<div class="cuadro-login">
+			<div>
+				<div>
+					<br><text class="titulo">INICIAR SESIÓN</text>
+				</div>
+
+				<br>
+
+				<div class="alin-text-reg" style="text-align: left;">
+					<label class="label" for="Correo">Correo</label>
+					<center><input type="text" id="correo" name="Correo" class="textarea" placeholder=" user-graduate"></textarea></center>
+				</div>
+
+				<br>
+
+				<div class="alin-text-reg" style="text-align: left">
+					<label class="label" >Contraseña</label>
+					<br>
+					<center><input type="text" id="contraseña" name="texto" class="textarea" placeholder=" lock"></textarea></center>
+				</div>
+
+				<br>
+
+				<button class="loguearse" onclick="myFunctionG()">INGRESAR</button><br><br>
+
+				<div class="linea">&nbsp;</div>
+				<div class="leyenda">ó</div>
+				<div class="linea">&nbsp;</div>
+
+				<br><br>
+
+				<a class="Re" href = "Registro.html">Registrate</a>
+		
+
+				<br>
+				<br>
+					<text id="has">#lavidadeestudiante</text>
+		
+
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+</body>
+
+<script>
+	function myFunctionG() {
+
+		var correo = document.getElementById("correo").value;
+		var clave = document.getElementById("contraseña").value;
+
+		var clear = () => {
+        document.getElementById("correo").value = "";
+        document.getElementById("contraseña").value = "";
+    	}
+    	clear();
+
+		var url = "http://localhost:8080/LogUsuario";
+		var data = validar();
+
+		fetch(url, {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				Accept: "application/json", "Content-Type": "application/json",
+			},
+		})
+		.then(response => response.json())
+		.then(datas => console.log(datas))
+		.catch(error => console.log("error!"))
+		.then(console.log('Si entro al fetch!'))
+		.then(location.href = "inicio.html")
+
+		function validar() {
+
+			var usuario = {
+				correo: correo,
+				clave: clave,
+			};
+
+			return usuario;
+		}
+	}
+	
+</script>
+
+</html>

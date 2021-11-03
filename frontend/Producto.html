@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="producto.css" />
+    <link rel="stylesheet" href="MenuFijo.css" />
+    <title>Agregar Producto</title>
+    <link rel="icon" href="Images/icono.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+    <div class="navbar navbar-expand-lg" id="menul">
+      <div class="menu">
+        <nav class="nav-above">
+          <ul class="nav-title">
+            <li>
+              <a id="laVida" href="inicio.html">LA VIDA DE ESTUDIANTE</a>
+            </li>
+          </ul>
+          <ul class="nav-title-right">
+            <li>
+              <a id="elUser" href="Login.html">
+                <i class="fas fa-user-graduate"></i>
+              </a>
+            </li>
+            <li>
+              <a href="VerProducto.html">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-main">
+          <ul class="nav-menu">
+            <li>
+              <a class="hoo1" href="Blogs.html">Blogs</a>
+            </li>
+            <li>
+              <a class="hoo2" href="Productos.html">Productos</a>
+            </li>
+            <li>
+              <a class="hoo3" href="VerEvento">Eventos</a>
+            </li>
+            <li>
+              <a class="hoo4" href="#">Panas</a>
+            </li>
+          </ul>
+          <ul class="nav-menu-right">
+            <li>
+              <a
+                href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA"
+              >
+                <img
+                  src="images/spotify.png"
+                  alt="spotify"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+                <img
+                  src="images/instagram.png"
+                  alt="instagram"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/lavidadestudiante">
+                <img
+                  src="images/facebook.png"
+                  alt="facebook"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.link/d92ume">
+                <img
+                  src="images/whatsapp.png"
+                  alt="whatsapp"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=NXmAW4kMZLI"
+                id="nav2-right-l"
+              >
+                <img
+                  src="images/youtube.png"
+                  alt="youtube"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    <hr />
+    <br />
+    <div class="titulo">
+      <text>Agregar Producto</text>
+    </div>
+    <hr />
+
+    <br /><br />
+    <div class="margen-izquierda"></div>
+    <div class="cuadro-imagen">
+      <div class="imagen">
+        <div class="box img"><img id="image" /></div>
+      </div>
+      <div class="input-file">
+        <input
+          id="myinput"
+          type="file"
+          class="input-file__input"
+          onchange="encode();"
+          multiple
+        />
+        <label for="myinput"> Agregar </label>
+      </div>
+    </div>
+
+    <div class="separacion"></div>
+
+        <div class="cuadro">
+          
+          <div class="margen-derecha">
+                <br /><label for="Nombre">Nombre del Producto</label><br />
+                <input type="text" class="input" id="Nombre" name="Nombre" />
+                <label for="Descripcion">Descripción</label><br />    <br />
+                <textarea name="Descripcion" class="textarea" rows="10" cols="40"></textarea>
+                <label for="Precio">Precio</label><br />
+                <input type="number" class="input" min="0" id="Precio" name="Precio" /><br /><br />
+                <label for="Cantidad">Cantidad</label><br />
+                <input type="number" class="input" min="1" id="Cantidad" name="Cantidad" /><br /><br /><br />
+                <button id="guarda" onclick=myFunctionG() >Guardar Cambios</button>
+              </div>
+          
+        </div>
+    <br />
+
+    <br />
+
+    <script>
+      var image = [];
+
+
+    
+
+      function encode() {
+        var selectedfile = document.getElementById("myinput").files;
+        if (selectedfile.length > 0) {
+          for (i = 0; i < selectedfile.length; i++) {
+            var imageFile = selectedfile[i];
+            var fileReader = new FileReader();
+            fileReader.onload = function (fileLoadedEvent) {
+              var srcData = fileLoadedEvent.target.result;
+              image = [];
+              image.push(srcData+"corte");
+              var newImage = document.createElement("img");
+              newImage.src = srcData;
+              //Enviar img al HTML
+              var archivo = document.getElementById("myinput").files[0];
+              var reader = new FileReader();
+              reader.readAsDataURL(archivo);
+              reader.onloadend = function () {
+                document.getElementById("image").src = reader.result;
+              };
+            };
+            fileReader.readAsDataURL(imageFile);
+          }
+        }
+      }
+
+      function myFunctionG() {
+        var url = "http://localhost:8080/addProducto";
+        var data = obtenerData();
+
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (datas) {
+            console.log(datas);
+            location.href = "Productos.html";
+          });
+         
+        //  alert('Producto guardado con exito!')
+      }
+
+
+
+      function obtenerData() {
+        var nombre = document.getElementsByName("Nombre")[0].value;
+        var precio = Number(document.getElementsByName("Precio")[0].value);
+        var idProducto = null;
+        var descripcion = document.getElementsByName("Descripcion")[0].value;
+        var numeroDisponible = document.getElementsByName("Cantidad")[0].value;
+
+        var producto = {
+          nombre: nombre,
+          precio: precio,
+          idProducto: idProducto,
+          imagen: image.toString(),
+          descripcion: descripcion,
+          numeroDisponible: numeroDisponible,
+        };
+        return producto;
+      }
+
+      
+
+    </script>
+  </body>
+</html>

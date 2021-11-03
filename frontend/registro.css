@@ -1,0 +1,119 @@
+body {
+    height: 100vh;
+    text-align: center;
+    background: #fcf9f9;
+}
+
+.menuFijo {
+    margin-top: -10px;
+    position: fixed;
+}
+
+.registro {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadroregistro {
+    width: 500px;
+    height: 505px;
+    background-color: white;
+    box-shadow: -2px 3px 5px #7e7b7b;
+    display: flex;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.registrate {
+    font-size: 40px;
+    font-family: CabinSketch;
+}
+
+.inputs {
+    width: 400px;
+    height: 30px;
+    font-family: Roboto;
+}
+
+.linea {
+    margin: 0px 20px;
+    width: 170px;
+    border-top: 1px solid #999;
+    position: relative;
+    top: 10px;
+    float: left;
+}
+
+.leyenda {
+    font-weight: bold;
+    float: left;
+    font-size: 20px;
+}
+
+.registrarse1 {
+    width: 398px;
+    height: 45px;
+    background-color: #96293a;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.alin-text-reg {
+    text-align: left;
+    font-family: "Roboto";
+    margin-left: 10px;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
+input::-webkit-input-placeholder {
+    color: #707070;
+    font-family: fontawesome1;
+}
+
+input::-moz-placeholder {
+    color: #707070;
+    font-family: fontawesome1;
+}
+
+.Re {
+    font-family: roboto;
+    color: #040ce8;
+    text-decoration-line: underline;
+    font-size: 15px;
+}
+
+.lavida {
+    font-family: Montserrat;
+}
+
+@font-face {
+    font-family: CabinSketch;
+    src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(Fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(Fonts/Otras/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: fontawesome1;
+    src: url(Fonts/fontawesome-5/otfs/Font-Awesome-5-Solid.otf);
+}

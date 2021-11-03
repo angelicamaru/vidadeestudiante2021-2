@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <title>CrearBlog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="addBlog.css">
+	<link rel="stylesheet" href="MenuFijo.css">
+    <link rel="icon" href="Images/icono.ico" />
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+	
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body> 
+	<div class="navbar navbar-expand-lg" id="menul">
+		<div class="menu">
+		  <nav class="nav-above">
+			<ul class="nav-title">
+			  <li>
+				<a id="laVida" href="inicio.html">LA VIDA DE ESTUDIANTE</a>
+			  </li>
+			</ul>
+			<ul class="nav-title-right">
+			  <li>
+				<a id="elUser" href="Login.html">
+				  <i class="fas fa-user-graduate"></i>
+				</a>
+			  </li>
+			  <li>
+				<a href="VerProducto.html">
+				  <i class="fas fa-shopping-cart"></i>
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		  <nav class="nav-main">
+			<ul class="nav-menu">
+			  <li>
+				<a class="hoo1" href="Blogs.html">Blogs</a>
+			  </li>
+			  <li>
+				<a class="hoo2" href="Productos.html">Productos</a>
+			  </li>
+			  <li>
+				<a class="hoo3" href="VerEvento">Eventos</a>
+			  </li>
+			  <li>
+				<a class="hoo4" href="#">Panas</a>
+			  </li>
+			</ul>
+			<ul class="nav-menu-right">
+			  <li>
+				<a
+				  href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA"
+				>
+				  <img
+					src="images/spotify.png"
+					alt="spotify"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+				  <img
+					src="images/instagram.png"
+					alt="instagram"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a href="https://www.facebook.com/lavidadestudiante">
+				  <img
+					src="images/facebook.png"
+					alt="facebook"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a href="https://wa.link/d92ume">
+				  <img
+					src="images/whatsapp.png"
+					alt="whatsapp"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			  <li>
+				<a
+				  href="https://www.youtube.com/watch?v=NXmAW4kMZLI"
+				  id="nav2-right-l"
+				>
+				  <img
+					src="images/youtube.png"
+					alt="youtube"
+					width="30"
+					height="30"
+				  />
+				</a>
+			  </li>
+			</ul>
+		  </nav>
+		</div>
+
+        <hr>
+
+    <div class="titulo">
+        <label class="icono-titulo">edit</label>
+        <label class="titulo-inicio">Añadir nueva entrada</label>
+    </div>
+
+    <div class="titulo2">
+        <input id="titulo" class="tituloblog" type="text" placeholder="Título de la entrada"></input>
+    </div>
+
+    <br><br>
+
+    <div class="cuadro-imagen">
+
+        <div class="imagen">
+            <div class="box img"><img id="image"></div>
+        </div>
+
+        <div class="input-file">
+            <input id="myinput" type="file" class="input-file__input" onchange="encode();" multiple />
+            <label for="myinput">Agregar</label>
+        </div>
+
+    </div>
+
+    <div>
+         <input id="autor" class="autor" type="text" placeholder="Autor">
+    </div>
+
+    <br><br>
+                
+    <div>
+        <input type="date" class="input" id="fecha" name="Fecha"></input>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="contenedortexto">
+        <div id="descripcion"></div>
+    </div> 
+
+    <br><br><br><br>
+
+    <input id="etiquetaUno" class="etiquetas" type=text placeholder=" #lavidadestudiante   #párchese   #sobreviveyreinarás">
+    
+    <br><br><br>
+
+    <input id="etiquetaDos" class="etiquetas" type=text placeholder=" #lavidadestudiante   #párchese   #sobreviveyreinarás">
+    
+    <br><br><br>
+
+    <button class="publicar" onclick="myFunctionP()">Publicar</button>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script> 
+
+    var toolbarOptions = [
+        ['bold', 'italic', 'underline'],  
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'color': [] }],       
+    ];
+
+    var quill = new Quill('#descripcion', {
+        modules: {
+        toolbar: toolbarOptions
+        },
+        placeholder:'¡Vamos de cabeza y sin casco!',
+        theme: 'snow'
+    });
+
+    var image = [];
+
+    function encode() {
+        var selectedfile = document.getElementById("myinput").files;
+        if (selectedfile.length > 0) {
+            for (i = 0; i < selectedfile.length; i++) {
+                var imageFile = selectedfile[i];
+                var fileReader = new FileReader();
+                fileReader.onload = function(fileLoadedEvent) {
+                    var srcData = fileLoadedEvent.target.result;
+                    image = [];
+              image.push(srcData+"corte");
+                    
+                    var newImage = document.createElement("img");
+                    newImage.src = srcData;
+                    //Enviar img al HTML
+                    var archivo = document.getElementById("myinput").files[0];
+                    var reader = new FileReader();
+                    reader.readAsDataURL(archivo);
+                    reader.onloadend = function() {
+                        document.getElementById("image").src = reader.result;
+                    }
+                };
+                fileReader.readAsDataURL(imageFile);
+             }
+        }
+    }
+
+    function jsSave() {
+
+       var contenido= quill.container.firstChild.innerHTML;
+
+        return contenido;
+    }
+
+    function myFunctionP() {
+
+        var url = "http://localhost:8080/addBlog";
+        var data = obtenerData();
+
+        fetch(url, {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+            }).then(
+              location.href = "Blogs.html")
+    
+    }
+
+    function obtenerData() {
+        var idBlog = null;
+        var titulo =document.getElementById("titulo").value;
+        var descripcion =jsSave()
+        var autor =document.getElementById("autor").value;
+        var fecha =document.getElementById("fecha").value;
+        var etiquetaUno =document.getElementById("etiquetaUno").value;
+        var etiquetaDos =document.getElementById("etiquetaDos").value;
+
+        var blog = {
+            idBlog: idBlog,
+            imagen: image[0].toString(),
+            titulo: titulo,
+            descripcion: descripcion,
+            autor: autor,
+            fecha: fecha,
+            etiquetaUno: etiquetaUno,
+            etiquetaDos: etiquetaDos
+        };
+        return blog;
+    }
+    </script>
+
+</body>
+
+</html>

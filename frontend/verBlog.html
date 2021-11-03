@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>verEntradaBlog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="verBlog.css" />
+	<link rel="stylesheet" href="MenuFijo.css" />
+    <link rel="icon" href="Images/icono.ico" />
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-expand-lg" id="menul">
+      <div class="menu">
+        <nav class="nav-above">
+          <ul class="nav-title">
+            <li>
+              <a id="laVida" href="inicio.html">LA VIDA DE ESTUDIANTE</a>
+            </li>
+          </ul>
+          <ul class="nav-title-right">
+            <li>
+              <a id="elUser" href="Login.html">
+                <i class="fas fa-user-graduate"></i>
+              </a>
+            </li>
+            <li>
+              <a href="VerProducto.html">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-main">
+          <ul class="nav-menu">
+            <li>
+              <a class="hoo1" href="Blogs.html">Blogs</a>
+            </li>
+            <li>
+              <a class="hoo2" href="Productos.html">Productos</a>
+            </li>
+            <li>
+              <a class="hoo3" href="VerEvento">Eventos</a>
+            </li>
+            <li>
+              <a class="hoo4" href="#">Panas</a>
+            </li>
+          </ul>
+          <ul class="nav-menu-right">
+            <li>
+              <a
+                href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA"
+              >
+                <img
+                  src="images/spotify.png"
+                  alt="spotify"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+                <img
+                  src="images/instagram.png"
+                  alt="instagram"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/lavidadestudiante">
+                <img
+                  src="images/facebook.png"
+                  alt="facebook"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.link/d92ume">
+                <img
+                  src="images/whatsapp.png"
+                  alt="whatsapp"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=NXmAW4kMZLI"
+                id="nav2-right-l"
+              >
+                <img
+                  src="images/youtube.png"
+                  alt="youtube"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    <hr />
+
+		<br>
+
+    <text id="tituloBlog" class="titulo-blog">Coctel</text>
+
+    <br><br>
+
+    <div id="imagen" class="imagen"></div>
+
+    <text id="autor" class="autor">Laura Zuluaga</text>
+    <br>
+    <text id="fecha" class="fecha">22/05/2021</text>
+
+    <br><br>
+
+    <div>
+      <p id="descripcion" class="texto-blog">
+        ¿Estás pensando en organizar una fiesta? Sorprende a tus invitados con
+        unas originales recetas de chupitos. Todo buen anfitrión debe saber
+        agasajar a sus huéspedes y con las recetas de chupitos que te vamos a
+        presentar en este artículo, además ayudarás a animar el ambiente y a que
+        tu fiesta sea memorable.
+      </p>
+    </div>
+
+    <br>
+
+    <text id="etiquetaUno" class="etiqueta1">#lavidadeestudiante</text
+    >
+    </br>
+    <text id="etiquetaDos" class="etiqueta2">#lavidadeestudiante</text>
+  </body>
+
+  <script>
+    window.onload = function () {
+
+      const valores = window.location.search;
+      const urlParams = new URLSearchParams(valores);
+
+      var tituloBlog = urlParams.get("nombre");
+
+      var url = "http://localhost:8080/getBlog";
+      var data = tituloBlog;
+
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (datas) {
+          console.log(datas);
+          showDatos(
+            datas.titulo,
+            datas.imagen,
+            datas.autor,
+            datas.fecha,
+            datas.descripcion,
+            datas.etiquetaUno,
+            datas.etiquetaDos
+          );
+        });
+    };
+
+    function showDatos(
+      tituloBlog,
+      image,
+      autor,
+      fecha,
+      descripcion,
+      etiquetaUno,
+      etiquetaDos
+    ) {
+      const imageC = image.split("corte");
+      var x = document.createElement("IMG");
+      x.setAttribute("src", imageC[0]);
+      x.setAttribute("width", "366");
+      x.setAttribute("height", "380");
+      x.setAttribute("alt", "The Pulpit Rock");
+      document.getElementById("imagen").appendChild(x);
+      document.getElementById("tituloBlog").innerHTML = tituloBlog;
+      document.getElementById("autor").innerHTML = autor;
+      document.getElementById("fecha").innerHTML = fecha;
+      document.getElementById("descripcion").innerHTML = descripcion;
+      document.getElementById("etiquetaUno").innerHTML = etiquetaUno;
+      document.getElementById("etiquetaDos").innerHTML = etiquetaDos;
+    }
+  </script>
+</html>

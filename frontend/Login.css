@@ -1,0 +1,124 @@
+body {
+  background-color: #fcf9f9;
+  text-align: center;
+}
+
+.menuFijo {
+  position: fixed;
+}
+
+.login {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.cuadro-login {
+  background-color: #ffffff;
+  width: 500px;
+  height: 400px;
+  box-shadow: -2px 3px 5px #7e7b7b;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.titulo {
+  font-size: 40px;
+  font-family: CabinSketch;
+}
+
+.alin-text-reg {
+  font-family: roboto;
+  border-radius: 0px;
+}
+
+.inputs {
+  border-radius: 5px;
+  width: 280px;
+  height: 25px;
+}
+
+.textarea {
+  width: 435px;
+  height: 30px;
+  font-family: roboto;
+}
+
+input::-webkit-input-placeholder {
+  color: #707070;
+  font-family: fontawesome1;
+}
+
+input::-moz-placeholder {
+  color: #707070;
+  font-family: fontawesome1;
+}
+
+.loguearse {
+  border-radius: 3px;
+  width: 435px;
+  height: 40px;
+  background-color: #96293a;
+  color: #ffffff;
+  font-family: roboto;
+}
+
+.Ol {
+  font-family: roboto;
+  color: #040ce8;
+  text-decoration-line: underline;
+}
+
+.linea {
+  margin: 0px 20px;
+  width: 180px;
+  border-top: 1px solid #999;
+  position: relative;
+  top: 10px;
+  float: left;
+}
+
+.leyenda {
+  font-weight: bold;
+  float: left;
+  font-family: roboto;
+  font-size: 22px;
+}
+
+.Re {
+  font-family: roboto;
+  color: #040ce8;
+  text-decoration-line: underline;
+  font-size: 15px;
+}
+
+#has {
+  font-family: montserrat;
+  text-align: center;
+}
+
+.label {
+  padding: 0px 8px;
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(Fonts/Otras/Robotof/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url(Fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: fontawesome1;
+  src: url(Fonts/fontawesome-5/otfs/Font-Awesome-5-Solid.otf);
+}
+
+@font-face {
+  font-family: CabinSketch;
+  src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}

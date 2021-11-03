@@ -1,0 +1,91 @@
+body {
+  background-color: #fcf9f9;
+}
+
+.titulo {
+  text-align: center;
+  font-family: CabinSketch;
+  margin-top: -10px;
+  font-size: 55px;
+  color: #707070;
+}
+
+.cuadro-imagen {
+  background-color: #e0defb;
+  width: 406px;
+  height: 410px;
+  border: 0.5px solid rgb(196, 192, 192);
+  box-shadow: -2px 3px 5px #7e7b7b;
+}
+
+#imagen {
+  margin-top: 20px;
+  margin-left: 18px;
+  background-color: #ffffff;
+  width: 366px;
+  height: 366px;
+  border: 0.5px solid rgb(196, 192, 192);
+  overflow: hidden;
+}
+
+.margen-izquierda {
+  padding: 5%;
+  padding-left: 15%;
+  float: left;
+}
+
+.margen-derecha {
+  float: left;	
+  padding: 5%;
+  padding-left: 1%;
+  width: 400px;
+}
+
+#tituloProducto {
+  text-align: center;
+  font-family: Lato;
+  font-size: 40px;
+  color: #000000;
+}
+
+#descripcion {
+  font-size: 17px;
+  font-family: Lato;
+}
+
+#precio {
+  padding-top: 5%;
+  font-size: 34px;
+  font-family: Lato;
+  padding-bottom: 0%;
+  margin-bottom: 4%;
+  font-weight: 600;
+}
+
+#agregar {
+  border: 2px solid;
+  border-radius: 14px;
+  border-color: rgb(179, 179, 179);
+  background-color: rgb(235, 227, 220);
+  padding-top: 4%;
+  padding-right: 8%;
+  padding-left: 8%;
+  padding-block: 5px;
+  font-family: Lato;
+  font-size: 18px;
+}
+
+#agregar:hover {
+  background-color: #e0defb;
+  color: white;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(Fonts/Otras/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: CabinSketch;
+  src: url(Fonts/Cabin_Sketch/CabinSketch-Regular.ttf);
+}

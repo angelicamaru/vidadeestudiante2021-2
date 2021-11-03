@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Blogs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="MenuFijo.css" />
+
+    <title>Blogs</title>
+  </head>
+
+  <body onload="traerBlogs();">
+    <div class="navbar navbar-expand-lg" id="menul">
+      <div class="menu">
+        <nav class="nav-above">
+          <ul class="nav-title">
+            <li>
+              <a id="laVida" href="Inicio.html">LA VIDA DE ESTUDIANTE</a>
+            </li>
+          </ul>
+          <ul class="nav-title-right">
+            <li>
+              <a id="elUser" href="Login.html">
+                <i class="fas fa-user-graduate"></i>
+              </a>
+            </li>
+            <li>
+              <a href="VerProducto.html">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-main">
+          <ul class="nav-menu">
+            <li>
+              <a class="hoo1" href="Blogs.html">Blogs</a>
+            </li>
+            <li>
+              <a class="hoo2" href="Productos.html">Productos</a>
+            </li>
+            <li>
+              <a class="hoo3" href="VerEvento.html">Eventos</a>
+            </li>
+            <li>
+              <a class="hoo4" href="#">Panas</a>
+            </li>
+          </ul>
+          <ul class="nav-menu-right">
+            <li>
+              <a
+                href="https://open.spotify.com/playlist/5OK2pYsdBqeMGIhux4Ecxy?si=AuRpcSxdQciWeE_5UDOQMA"
+              >
+                <img
+                  src="images/spotify.png"
+                  alt="spotify"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/lavidadestudiante/?hl=es-la">
+                <img
+                  src="images/instagram.png"
+                  alt="instagram"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/lavidadestudiante">
+                <img
+                  src="images/facebook.png"
+                  alt="facebook"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.link/d92ume">
+                <img
+                  src="images/whatsapp.png"
+                  alt="whatsapp"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=NXmAW4kMZLI"
+                id="nav2-right-l"
+              >
+                <img
+                  src="images/youtube.png"
+                  alt="youtube"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div id="Aqui" class="row">
+        <div class="col-sm-6 offset-md-12">
+          <a class="a" href="addBlog.html">
+            <img class="img-fluid" src="Images/Agregarimagen.jpg" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function traerBlogs() {
+      var url = "http://localhost:8080/getBlogs";
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((datas) => {
+          var Blogs = datas;
+          const fragment = document.createDocumentFragment();
+          for (i = 0; i < Blogs.length; i++) {
+            var Blog = {
+              idBlog: Blogs[i].idBlog,
+              imagen: Blogs[i].imagen,
+              nombre: Blogs[i].titulo,
+            };
+
+            const image = Blog.imagen.split("corte");
+            var aña = () => {
+              var div = document.createElement("div");
+              div.setAttribute("class", "Blog");
+
+              var img = document.createElement("img");
+              img.setAttribute("src", image[0]);
+              img.setAttribute("class", "img-fluid");
+              var nombre = document.createElement("a");
+              nombre.setAttribute("class", "nombre");
+              nombre.setAttribute("href", "verBlog.html?nombre=" + Blog.nombre);
+
+              var texto = document.createElement("div");
+              texto.setAttribute("class", "texto");
+              var col = document.createElement("div");
+              col.setAttribute("class", " col-sm-6 offset-md-12");
+              var prin = document.getElementById("Aqui");
+
+              nombre.textContent = Blog.nombre;
+              texto.appendChild(nombre);
+              col.appendChild(img);
+              col.appendChild(texto);
+              prin.appendChild(col);
+            };
+
+            aña();
+          }
+        })
+        .catch((error) => console.log("error!"))
+        .then(console.log("Si entro al fetch!"));
+    }
+  </script>
+</html>
